@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <body>
     <div th:fragment="menu">
@@ -12,9 +13,29 @@
                             <a class="nav-link active" aria-current="page" th:href="@{/welcome}"
                                 href="welcome.html">Inicio</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" sec.authorize="hasAnyAuthority('MAT')">
                             <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/matematicas}"
                                 href="welcome.html">Matemáticas</a>
+                        </li>
+                        <li class="nav-item" sec.authorize="hasAnyAuthority('LEN')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/lengua}"
+                                href="welcome.html">Lengua</a>
+                        </li>
+                        <li class="nav-item" sec.authorize="hasAnyAuthority('ING')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/ingles}"
+                                href="welcome.html">Inglés</a>
+                        </li>
+                        <li class="nav-item" sec.authorize="hasAnyAuthority('REL')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/religion}"
+                                href="welcome.html">Religión</a>
+                        </li>
+                        <li class="nav-item" sec.authorize="hasAnyAuthority('FIS')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/fisica}"
+                                href="welcome.html">Física</a>
+                        </li>
+                        <li class="nav-item" sec.authorize="hasAnyAuthority('QUI')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/quimica}"
+                                href="welcome.html">Química</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" th:href="@{/logout}"><i class="bi bi-box-arrow-left" th:text="logout"></i></a>
